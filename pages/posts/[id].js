@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
-import Link from 'next/link'
 import { API } from 'aws-amplify'
 import { useRouter } from 'next/router'
 import '../../configureAmplify'
@@ -33,10 +31,6 @@ export default function Home({ post }) {
   }
   return (
     <div>
-      <nav style={{ padding: 20 }}>
-        <Link href="/"><span style={{marginRight: 20}}>Home</span></Link>
-        <Link href="/create-post">Create Post</Link>
-      </nav>
       <div className={styles.container}>
         <Head>
           <title>Create Next App</title>

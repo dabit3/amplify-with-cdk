@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { API } from 'aws-amplify'
@@ -25,16 +24,7 @@ export default function Home() {
   }
   return (
     <div>
-      <nav style={{ padding: 20 }}>
-        <Link href="/"><span style={{marginRight: 20}}>Home</span></Link>
-        <Link href="/create-post">Create Post</Link>
-      </nav>
       <div className={styles.container}>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <h1>Posts</h1>
       {
         posts.map((post, index) => (<Link key={index} href={`/posts/${post.id}`}><h2>{post.title}</h2></Link>))

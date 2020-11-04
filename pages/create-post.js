@@ -1,7 +1,5 @@
-import { withAuthenticator } from '@aws-amplify/ui-react'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { useState } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
 import { API } from 'aws-amplify'
 import { v4 as uuid } from 'uuid'
 import styles from '../styles/Home.module.css'
@@ -36,16 +34,11 @@ function CreatePost() {
   }
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <h2>Create new Post</h2>
       <input onChange={onChange} name="title" placeholder="Title" />
       <textarea onChange={onChange} name="content" placeholder="Content" />
       <button onClick={createNewPost}>Create Post</button>
-     
+      <AmplifySignOut />
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
