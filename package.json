@@ -1,0 +1,18 @@
+{
+  "name": "cdk-amplify-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^0.2.27",
+    "aws-amplify": "^3.3.7",
+    "next": "10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "uuid": "^8.3.1"
+  }
+}

@@ -1,0 +1,29 @@
+type Post @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  title: String!
+  content: String!
+  username: String!
+}
+
+input PostInput {
+  id: ID!
+  title: String!
+  content: String!
+}
+
+input UpdatePostInput {
+  id: ID!
+  title: String
+  content: String
+}
+
+type Query {
+  getPostById(postId: ID!): Post @aws_cognito_user_pools @aws_api_key
+  listPosts: [Post] @aws_cognito_user_pools @aws_api_key
+}
+
+type Mutation {
+  createPost(post: PostInput!): Post @aws_cognito_user_pools
+  updatePost(post: UpdatePostInput!): Post @aws_cognito_user_pools
+  deletePost(postId: String!): String @aws_cognito_user_pools
+}
