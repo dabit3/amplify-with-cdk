@@ -4,7 +4,7 @@ import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 import { API } from 'aws-amplify'
 import { useRouter } from 'next/router'
-import '../../configureAmplfy'
+import '../../configureAmplify'
 
 const getPostById = `
   query getPostById($postId: ID!) {
